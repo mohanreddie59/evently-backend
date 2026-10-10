@@ -15,7 +15,6 @@ ENV DB_PATH=/var/data/evently.db
 # Expose HTTP port
 EXPOSE 4000
 
-# Mount point for persistent SQLite data
-VOLUME ["/var/data"]
+# Persistent SQLite data lives at /var/data. Attach a Railway volume with mount path /var/data to the service.
 
 CMD ["node", "--no-warnings", "server.js"]
