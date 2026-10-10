@@ -1,0 +1,14 @@
+{
+  "name": "evently-backend-pro",
+  "version": "1.0.0",
+  "description": "Production-shaped backend for the Evently event-management & volunteer portal — SQLite, hashed passwords, session-token auth, role-based access control.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node --no-warnings server.js",
+    "dev": "node --no-warnings --watch server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

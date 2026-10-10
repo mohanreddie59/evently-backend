@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: evently-backend
+    runtime: node
+    # Persistent disks are not available on Render's free web services,
+    # so this needs the Starter plan or above.
+    plan: starter
+    buildCommand: echo "no dependencies to install"
+    startCommand: node --no-warnings server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: DB_PATH
+        value: /var/data/evently.db
+      - key: ADMIN_SIGNUP_CODE
+        generateValue: true
+    disk:
+      name: evently-data
+      mountPath: /var/data
+      sizeGB: 1
